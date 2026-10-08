@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Online Grocery Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span>🛒</span>
+            <h1>FreshMart</h1>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for groceries..."
+            >
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Cart
+            <span id="cartCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Fresh Groceries<br>Delivered to Your Door</h2>
+
+            <p>
+                Shop rice, flour, masala, groceries and daily essentials
+                from your trusted local store.
+            </p>
+
+            <button onclick="scrollToProducts()">
+                Shop Now →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-list">
+
+            <button onclick="filterCategory('all')">
+                🛍️ All
+            </button>
+
+            <button onclick="filterCategory('rice')">
+                🍚 Rice
+            </button>
+
+            <button onclick="filterCategory('flour')">
+                🌾 Flour
+            </button>
+
+            <button onclick="filterCategory('masala')">
+                🌶️ Masala
+            </button>
+
+            <button onclick="filterCategory('oil')">
+                🫗 Oils
+            </button>
+
+            <button onclick="filterCategory('snacks')">
+                🍪 Snacks
+            </button>
+
+            <button onclick="filterCategory('beverages')">
+                🥤 Beverages
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <main class="products-section" id="products">
+
+        <div class="section-title">
+
+            <div>
+                <h2>Popular Groceries</h2>
+                <p>Fresh products at affordable prices</p>
+            </div>
+
+        </div>
+
+        <div id="productGrid" class="product-grid">
+
+            <!-- Products generated using JavaScript -->
+
+        </div>
+
+    </main>
+
+
+    <!-- CART SIDEBAR -->
+    <div id="cartOverlay" class="overlay" onclick="closeCart()"></div>
+
+    <aside id="cartSidebar" class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>🛒 Your Cart</h2>
+
+            <button onclick="closeCart()">✕</button>
+
+        </div>
+
+        <div id="cartItems" class="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="total-row">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <button class="checkout-button" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" onclick="closeCheckout()">
+                ✕
+            </button>
+
+            <h2>Checkout</h2>
+
+            <p>Enter your delivery details.</p>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Phone Number"
+            >
+
+            <textarea
+                id="customerAddress"
+                placeholder="Delivery Address"
+            ></textarea>
+
+            <select id="paymentMethod">
+
+                <option value="cod">
+                    Cash on Delivery
+                </option>
+
+                <option value="upi">
+                    UPI
+                </option>
+
+            </select>
+
+            <button class="place-order" onclick="placeOrder()">
+                Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+
+            <h2>FreshMart</h2>
+
+            <p>
+                Your trusted local grocery store.
+            </p>
+
+        </div>
+
+        <p>
+            © 2026 FreshMart. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
